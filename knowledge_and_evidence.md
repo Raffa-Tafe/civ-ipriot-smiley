@@ -110,25 +110,25 @@ python3 main.py
 
    | Type                    | name               | value                          |
    | ----------              |--------------------|--------------------------------|
-   | built-in primitive type | int= "WHITE"       | (255,255,255)                  |
+   | built-in primitive type | tuple="WHITE"      | (255,255,255)                  |
    | built-in composite type | list= "Self.pixel" | list                           |
    | user-defined type       | class Smiley       | the whole program of Smiley.py |
 
 2. Fill in (`_`) the following table based on the code in `smiley.py`:
 
-   | Object                   | Type                                             |
-   | ------------             |--------------------------------------------------|
-   | self.pixels              | Built-in composite type: list                    |
-   | A member of self.pixels  | the member inside list "self.pixel" is a: string |
-   | self                     | instance of the "__init__" Class                 |
+   | Object                   | Type                                            |
+   | ------------             |-------------------------------------------------|
+   | self.pixels              | Built-in composite type: list                   |
+   | A member of self.pixels  | the member inside list "self.pixel" is a: tuple |
+   | self                     | instance of the Smiley Class                    |
 
 3. Examine the code for `smiley.py`, `sad.py`, and `happy.py`. Give an example of each of the following control structures using an example from **each** of these files. Include the first line and the line range:
 
    | Control Flow | File      | First line | Line range |
    | ------------ |-----------| -------- |------------|
-   |  sequence    | sad.py    | "def draw_mouth(self):"         | 11         |
-   |  selection   | smiley.py | "Set the SenseHat's light intensity to low (True) or high (False)"         | 30         |
-   |  iteration   | sad.py    | "for pixel in mouth:"         | 16         |
+   |  sequence    | sad.py    | "def draw_mouth(self):"         | 11-18      |
+   |  selection   | smiley.py | "def dim_display(self, dimmed=True):"| 58-66      |
+   |  iteration   | sad.py    | "for pixel in mouth:"         | 16-18      |
 
 4. Though everything in Python is an object, it is sometimes said to have four "primitive" types. Examining the three files `smiley.py`, `sad.py`, and `happy.py`, identify which of the following types are used in any of these files, and give an example of each (use an example from the code, if applicable, otherwise provide an example of your own):
 
@@ -147,7 +147,7 @@ python3 main.py
 6. Examine `happy.py`, and identify the constructor (initializer) for the `Happy` class:
    1. What is the purpose of a constructor (in general) and this one (in particular)?
 
-   > Constructor is used to initialize the object's properties and set up any necessary state when the object is created. in happy.py, constructor is used to make the smile face 
+   > Constructor is used to initialize the object's properties and set up any necessary state when the object is created. in happy.py, constructor is used to make the smile face by calling the parent constructor and then customizing the mouth and eyes to look happy 
    >
 
    2. What statement(s) does it execute (consider the `super` call), and what is the result?
@@ -163,22 +163,22 @@ python3 main.py
 
 1. What code style is used in the code? Is it likely to be the same as the code style used in the SenseHat? Give to reasons as to why/why not:
    
-> It’s likely that Sense HAT’s library code follows similar coding standards to maintain readability and consistency.
+> It’s likely that PEP8 and Sense HAT’s library code follows similar coding standards to maintain readability and consistency.
 >
 
 2. List three aspects of this convention you see applied in the code.
 
-> - Naming Convention
-> - Consistent Converntion
-> - Docstrings for Method
+> - Naming Convention: Classes like Smiley and methods like draw_mouth() and dim_display() use lowercase_with_underscores
+> - Consistent Converntion: All indentation uses 4 spaces, with consistent block structures and spacing between methods.
+> - Docstrings for Method: Most functions and methods include triple-quoted """docstrings""" describing what the method does
 
 3. Give two examples of organizational documentation in the code.
 
 > - """
-Provides a Smiley with a happy expression
+Draws the mouth feature on a happy face.
 """
 > - """
-Draws the mouth feature on a smiley
+Set the SenseHat's light intensity to low (True) or high (False).
 """
 >
 
@@ -192,7 +192,9 @@ Draws the mouth feature on a smiley
 
 | Class Name | Super or Sub? | Direct parent(s)  |
 |------------|---------------|-------------------|
-| sad        | Sub           | smiley            |
+| Smiley     | super         | object            |
+| sad        | sub           | Smiley            |
+| Blinkable  | super         | abc.ABC           |
 | Happy      | sub           | Smiley, Blinkable |
 
 2. Explain the concept of abstraction, giving an example from the project (note "implementing an ABC" is **not** in itself an example of abstraction). (Max 150 words)
@@ -280,7 +282,7 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 
 Include a screenshot of the sad smiley or the modified `main.py`:
 
-![Run_blinkable_sad.py.png](Run_blinkable_sad.py.png)
+![img.png](img.png)
 
 - Observe and document the Sad smiley as it blinks its eyes. Describe any adjustments or issues encountered during implementation.
 
@@ -362,7 +364,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   4. **Bulk rename:** We want to update our grid to use the value of complexion, but we have so many `Y`'s in the grid. Use your IDE's refactoring tool to rename all instances of the **symbol** `Y` to `X`. Where `X` is the value of the `complexion` variable. Include a screenshot evidencing you have found the correct refactor tool and the changes made.
 
-![Run_Sad_Complexion.png](Run_Sad_Complexion.png)
+![img_1.png](img_1.png)
 
   5. **Update the `complexion` method:** Adjust this method to return `self.my_complexion`, ensuring that whatever color is assigned during instantiation is what the smiley displays.
 

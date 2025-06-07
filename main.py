@@ -11,8 +11,7 @@ from angry import Angry
 
 def main():
 
-    smiley = Angry()
-
+    smiley = Happy()
 
     smiley.show()
 
