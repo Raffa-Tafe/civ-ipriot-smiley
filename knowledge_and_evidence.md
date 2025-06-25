@@ -108,11 +108,11 @@ python3 main.py
 
 1. Examine the code for the `smiley.py` file and provide  an example of a variable of each of the following types and their corresponding values (`_` should be replaced with the appropriate values):
 
-   | Type                    | name         | value                          |
-   |-------------------------|--------------|--------------------------------|
-   | built-in composite type | "WHITE"      | (255,255,255)                  |
-   | built-in composite type | "self.pixel" | list                           |
-   | user-defined type       | class Smiley | the whole program of Smiley.py |
+   | Type                    | name                      | value                          |
+   |-------------------------|---------------------------|--------------------------------|
+   | built-in primitive type | Inside of white is an int | (255,255,255) "225" is an int  |
+   | built-in composite type | "self.pixel"              | list                           |
+   | user-defined type       | class Smiley              | the whole program of Smiley.py |
 
 2. Fill in (`_`) the following table based on the code in `smiley.py`:
 
@@ -124,11 +124,11 @@ python3 main.py
 
 3. Examine the code for `smiley.py`, `sad.py`, and `happy.py`. Give an example of each of the following control structures using an example from **each** of these files. Include the first line and the line range:
 
-   | Control Flow | File      | First line | Line range |
-   | ------------ |-----------| -------- |------------|
-   |  sequence    | sad.py    | "def draw_mouth(self):"         | 11-18      |
-   |  selection   | smiley.py | "def dim_display(self, dimmed=True):"| 58-66      |
-   |  iteration   | sad.py    | "for pixel in mouth:"         | 16-18      |
+   | Control Flow | File      | First line                            | Line range  |
+   | ------------ |-----------|---------------------------------------|-------------|
+   |  sequence    | sad.py    | "def draw_mouth(self):"               | 11-18       |
+   |  selection   | smiley.py | "def dim_display(self, dimmed=True):" | 58-66       |
+   |  iteration   | sad.py    | "for pixel in mouth:"                 | 16-18       |
 
 4. Though everything in Python is an object, it is sometimes said to have four "primitive" types. Examining the three files `smiley.py`, `sad.py`, and `happy.py`, identify which of the following types are used in any of these files, and give an example of each (use an example from the code, if applicable, otherwise provide an example of your own):
 
@@ -161,7 +161,7 @@ python3 main.py
 
 1. What code style is used in the code? Is it likely to be the same as the code style used in the SenseHat? Give to reasons as to why/why not:
    
-> It's PEP8, which is a standard guide for python. Some style i see in the codes are snake_case, which use underscores instead of space. The other one is CamelCase, using capital letter on every words
+> It's PEP8, which is a standard guide for python. The style I see in the codes are snake_case, which use underscores instead of space. The other one is CamelCase, using capital letter on every words
 
 2. List three aspects of this convention you see applied in the code.
 
@@ -252,12 +252,12 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 
 2. For those smileys that blink, does the author expect them to blink in the same way? Explain.
 
-> No, each smiley can blink in its own way. The blink() method exists in both the Happy and Sad classes, but they can define it differently. This flexibility allows each class to choose how blinking should look or behave. I haven't tried much, but I remember messing with the delay time.
+> No, each smiley can blink in its own way. The blink() method exists in both the Happy and Sad classes, but they can define it differently. This allows each class to choose how blinking should look or behave. I haven't tried much, but I remember messing with the delay time.
 >
 
 3. Referring to the implementation of blink in the Happy and Sad Smiley classes, give a brief explanation of what polymorphism is.
 
-> Polymorphism means different classes can have a method with the same name but do different things. In this code, both Happy and Sad have a method called blink(), but they might handle the blinking slightly differently and that’s okay, maybe diffrent delay in blinking or the position of the eyes. The key is that you can call blink() on either, and it will work in its own way.
+> Polymorphism means different classes can have a method with the same name but do different things. In this code, both Happy and Sad have a method called blink(), but they might handle the blinking slightly differently, maybe diffrent delay in blinking or the position of the eyes. The key is that you can call blink() on either, and it will work in its own way.
 >
 
 4. How is inheritance used in the blink method, and why is it important for polymorphism?
@@ -323,7 +323,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
   1. **Defined Colors and Their Location:**
 
      1. Which colors are defined and in which class(s)?
-        > in happy, sad, and smiley color is yellow
+        > in happy, sad, and smiley color is yellow, But after my change, sad is blue
      2. What type of variables hold these colors? Are the values expected to change during the program's execution? Explain your answer.
         > The colors are stored as class variables, which means they belong to the class itself, not to any one object created from it. 
      3. Add the color blue to the appropriate class using the appropriate format and values.
